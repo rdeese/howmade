@@ -1,7 +1,33 @@
-<head>
-</head>
-<body>
-  <div id="player"></div>
-	<button id="next-button">i understand</button>
-  <script src="howmade.js"></script>
-</body>
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      * {
+        font-family: monaco, Consolas, 'Lucida Console', monospace;
+        font-size: 20px;
+        text-align: center;
+      }
+      #player {
+        display: block;
+        margin: 1em auto;
+      }
+      h1 {
+        font-size: 1.5em;
+      }
+      .main-button {
+        width: 270px;
+      }
+    </style>
+  </head>
+  <body>
+    <iframe width="100%" height="300" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/users/27246849&amp;auto_play=true&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
+    <h1>Thing Explorer</h1>
+    <div id="player"></div>
+    <div id="buttons">
+      <button class="main-button" id="answer-button">what is this thing?</button>
+      <button class="main-button" id="next-button">show me another thing</button>
+      <span class="main-button" id="thing-name" display: none></span>
+    </div>
+    <script type="text/javascript" src="howmade.js"></script>
+  </body>
+</html>

@@ -22,8 +22,8 @@ var getNextVideo = (function () {
 		},
 		{
 			id: '753cgzmSAi4',
-			start: 30,
-			end: 33,
+			start: 1004,
+			end: 1268,
 			name: 'hammock'
 		},
 		{
@@ -31,11 +31,29 @@ var getNextVideo = (function () {
 			start: 18,
 			end: 199,
 			name: 'condom'
-		}
+		},
+    {
+      id: '_P-oLoetj5g',
+      start: 978,
+      end: 1243,
+      name: 'pressure gauge'
+    },
+    {
+      id: 'Sm_-SJ31T0w',
+      start: 33,
+      end: 297,
+      name: 'fishing reel'
+    }
 	]
 
+  function formatVideoListInPlace(list) {
+    var entry;
+    for (var i = 0; i < list.length; i++) {
+      entry = list[i];
+    }
+  }
+
 	function fisherYatesShuffleInPlace(array) {
-		console.log('shuffling');
 		var temp;
 		var randomIndex;
 		for (var target = array.length-1; target > 0; target--) {
@@ -51,7 +69,6 @@ var getNextVideo = (function () {
 	fisherYatesShuffleInPlace(videoList)
 
 	return function () {
-		console.log('getting next video', videoIndex);
 		nextVideo = videoList[videoIndex++];
 		if (videoIndex == videoList.length) {
 			fisherYatesShuffleInPlace(videoList);
@@ -69,8 +86,8 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
 function onYouTubeIframeAPIReady() {
 	var player = new YT.Player('player', {
-		height: '390',
-		width: '640',
+		height: '485',
+		width: '800',
 		events: {
 			'onReady': onPlayerReady,
 			'onStateChange': onPlayerStateChange
@@ -84,13 +101,13 @@ function onYouTubeIframeAPIReady() {
 			origin: 'localhost:8080',
 			rel: 0,
 			showinfo: 0,
+      fs: 1
 		}
 	});
 }
 
 function onPlayerReady(event) {
-	console.log('player is ready');
-	document.getElementById('next-button').addEventListener('click', function () {
+	nextButton.addEventListener('click', function () {
 		loadVideo(event.target, getNextVideo());
 	});
 	
@@ -110,9 +127,42 @@ var onPlayerStateChange = (function () {
 	}
 })();
 
+
 function loadVideo(player, video) {
+  thingNameSpan.innerHTML = video.name;
+  toggleShowAnswer(false);
 	player.loadVideoById({ videoId: video.id,
 												 startSeconds: video.start,
 												 endSeconds: video.end })
 }
 
+var thingNameSpan = document.getElementById('thing-name');
+var answerButton = document.getElementById('answer-button');
+var nextButton = document.getElementById('next-button');
+
+var toggleShowAnswer = (function () {
+  var isShowing = false;
+  function showAnswer () {
+    thingNameSpan.style.display = "inline-block";
+    nextButton.style.display = "none";
+    answerButton.textContent = "hide the truth";
+    isShowing = true;
+  };
+  function hideAnswer () {
+    thingNameSpan.style.display = "none";
+    nextButton.style.display = "inline-block";
+    answerButton.textContent = "what is this thing?";
+    isShowing = false;
+  };
+  return function (shouldShow) {
+    if (shouldShow != null) {
+      shouldShow ? showAnswer() : hideAnswer();
+    } else {
+      isShowing ? hideAnswer() : showAnswer();
+    }
+  };
+})();
+
+answerButton.addEventListener('click', function () {
+  toggleShowAnswer();
+});

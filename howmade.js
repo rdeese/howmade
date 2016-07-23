@@ -43,6 +43,72 @@ var getNextVideo = (function () {
       start: 33,
       end: 297,
       name: 'fishing reel'
+    },
+    {
+      id: 'xUioSOvLTPU',
+      name: 'lipstick',
+      start: 40,
+      end: 297
+    },
+    {
+      id: 'GrVKa8pTMCE',
+      name: 'scissors',
+      start: 5,
+      end: 276
+    },
+    {
+      id: 'pRXBBZsseuM',
+      name: 'garden fork',
+      start: 33,
+      end: 295
+    },
+    {
+      id: 'NBihV_PoGWA',
+      name: 'english toffee',
+      start: 34,
+      end: 291
+    },
+    {
+      id: 'roMJblx9FBM',
+      name: 'paint chip card',
+      start: 37,
+      end: 297
+    },
+    {
+      id: 'fRCja1ph0II',
+      name: 'bundt pan',
+      start: 38,
+      end: 298
+    },
+    {
+      id: 'wvUJZ0nWDL4',
+      name: 'pewter flask',
+      start: 44,
+      end: 299
+    },
+    {
+      id: 'GBzi1daU774',
+      name: 'potato salad',
+      start: 46,
+      end: 299
+    },
+    {
+      id: 'LDwS31OE7ak',
+      name: 'hydrogen fuel cell',
+      start: 46,
+      end: 299
+    },
+    {
+      id: '-U8xy7oHa-I',
+      name: 'engineered wood siding',
+      start: 32,
+      end: 299
+    },
+    {
+      id: 'Bq5Dk8YD1JM',
+      name: 'canvas tent',
+      start: 41,
+      end: 299
     }
 	]
 

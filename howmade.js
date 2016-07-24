@@ -109,6 +109,42 @@ var getNextVideo = (function () {
       name: 'canvas tent',
       start: 41,
       end: 299
+    },
+    {
+      id: 'u5u8Iko4ZaU',
+      name: 'peace pipe',
+      start: 39,
+      end: 298
+    },
+    {
+      id: 'oWFFXuhvkKA',
+      name: 'shredded wheat cereal',
+      start: 44,
+      end: 284
+    },
+    {
+      id: 'NNMF6BDL8nk',
+      name: 'cannon',
+      start: 54,
+      end: 299
+    },
+    {
+      id: 'xHWZi1cw5gY',
+      name: 'robotic hunting decoy',
+      start: 41,
+      end: 299
+    },
+    {
+      id: 'Bfw_gWUDqaY',
+      name: 'taser',
+      start: 43,
+      end: 299
+    },
+    {
+      id: 'ymJKmFMugrc',
+      name: 'space pen',
+      start: 39,
+      end: 297
     }
 	]
 
